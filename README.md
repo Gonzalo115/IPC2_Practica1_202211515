@@ -1,0 +1,2 @@
+# LABORATORIO INTRODUCCION A LA PROGRAMACION Y COMPUTACION 2 Sección A
+Nombre: Gonzalo Fernando Perez Cazun. Carnet: 202211515
