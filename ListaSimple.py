@@ -22,10 +22,10 @@ class ListaSimple:
             actual = actual.siguiente 
         print("------------")
         
-    def buscar_id(self, id):
+    def buscar_nombre(self, nombre):
         actual = self.inicio
         while actual != None:
-            if actual.id == id:
+            if actual.nombre == nombre:
                 return actual
             actual = actual.siguiente
         return None

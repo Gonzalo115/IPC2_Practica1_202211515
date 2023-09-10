@@ -18,11 +18,24 @@ def pedirNumeroEntero():
     return num
 
 def tablero():
-    nombreT = 1
-    fila = input("Ingrese el No. de Filas: ")
-    columna = input("Ingrese el No. de Columnas: ")
-    tablero = Tablero(nombreT, fila, columna)
+    nombreT = "Coloreado"
+    filaT = input("Ingrese el No. de Filas: ")
+    columnaT = input("Ingrese el No. de Columnas: ")
+    tablero = Tablero(nombreT, filaT, columnaT)
+    Juego.agregar_al_final(tablero)
     os.system('cls')
+    agregarPiezas()
+
+
+def agregarPiezas():
+    buscar = "Coloreado"
+    tablero = Juego.buscar_nombre(buscar)
+
+    filaT = int(tablero.cosultarFila())
+    columnaT = int(tablero.cosultarColumna())
+
+
+
     salir2 = False
     opcion = 0
     while not salir2:
@@ -48,47 +61,79 @@ def tablero():
             print("5. Naranja")
 
             color = input("Ingrese El Color Que Desea Agregar:")
-            fila = input("Ingrese en que fila se desea agregar La pieza:")
-            columna = input("Ingrese en que columna se desea agregar La pieza:")
+            fila = int(input(f"Ingrese en que fila se desea agregar La pieza en el ranogo de [1,{filaT}]:"))
+            columna = int(input(f"Ingrese en que columna se desea agregar La pieza en el rango de [1,{columnaT}]:"))
 
-            if color == "Azul":
-                inicial = "A"
-                nombre = "blue"
+            if 1 <= fila <= filaT  and 1 <= columna <= columnaT:
+                if color == "Azul":
+                    inicial = "A"
+                    nombre = "blue"
 
-                pieza = Pieza(fila, columna, inicial, nombre)
-                tablero.piezas.agregar_al_final(pieza)
-                
-            elif color == "Rojo":
-                inicial = "R"
-                nombre = "red"
+                    pieza = Pieza(fila, columna, inicial, nombre)
+                    tablero.piezas.agregar_al_final(pieza)
 
-                pieza = Pieza(fila, columna, inicial, nombre)
-                tablero.piezas.agregar_al_final(pieza)
-                
-            elif color == "Verde":
-                inicial = "V"
-                nombre = "green"
+                    print("")
+                    print("===========================================")
+                    print("                Tablero")
+                    print("===========================================")
+                    Juego.mostrar()
+                    
+                elif color == "Rojo":
+                    inicial = "R"
+                    nombre = "red"
 
-                pieza = Pieza(fila, columna, inicial, nombre)
-                tablero.piezas.agregar_al_final(pieza)
-                
-            elif color == "Purpura":
-                inicial = "P"
-                nombre = "purple"
+                    pieza = Pieza(fila, columna, inicial, nombre)
+                    tablero.piezas.agregar_al_final(pieza)
 
-                pieza = Pieza(fila, columna, inicial, nombre)
-                tablero.piezas.agregar_al_final(pieza)
-                
-            elif color == "Naranja":
-                inicial = "N"
-                nombre = "orange"
+                    print("")
+                    print("===========================================")
+                    print("                Tablero")
+                    print("===========================================")
+                    Juego.mostrar()
+                    
+                elif color == "Verde":
+                    inicial = "V"
+                    nombre = "green"
 
-                pieza = Pieza(fila, columna, inicial, nombre)
-                tablero.piezas.agregar_al_final(pieza)
-                
+                    pieza = Pieza(fila, columna, inicial, nombre)
+                    tablero.piezas.agregar_al_final(pieza)
+
+                    print("")
+                    print("===========================================")
+                    print("                Tablero")
+                    print("===========================================")
+                    Juego.mostrar()
+                    
+                elif color == "Purpura":
+                    inicial = "P"
+                    nombre = "purple"
+
+                    pieza = Pieza(fila, columna, inicial, nombre)
+                    tablero.piezas.agregar_al_final(pieza)
+
+                    print("")
+                    print("===========================================")
+                    print("                Tablero")
+                    print("===========================================")
+                    Juego.mostrar()
+                    
+                elif color == "Naranja":
+                    inicial = "N"
+                    nombre = "orange"
+
+                    pieza = Pieza(fila, columna, inicial, nombre)
+                    tablero.piezas.agregar_al_final(pieza)
+
+                    print("")
+                    print("===========================================")
+                    print("                Tablero")
+                    print("===========================================")
+                    Juego.mostrar()
+                    
+                else:
+                    print("La entrada no es una opcción.")
             else:
-                print("La entrada no es una opcción.")
-        
+                print("El rango de la fila o columna no es posible")
         elif opcion == 2:
             salir2 = True
         
@@ -97,8 +142,6 @@ def tablero():
         input("Presione ENTER para continuar...")
         os.system('cls')
 
-    Juego.agregar_al_final(tablero)
-    Juego.mostrar() 
 
 
 def menu():
