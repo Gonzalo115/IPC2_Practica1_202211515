@@ -62,3 +62,12 @@ class Tablero(Nodo):
             actual = actual.siguiente
         return None
     
+    def tableroOrdenada(self):
+        for r in range(1, self.fila + 1):
+            for c in range (1, self.columna + 1):
+                dato = self.get_item(r, c)
+                if dato:
+                    print(f'[{dato.inicialColor}]', end="\t")
+                else:
+                    print("[ ]", end="\t")
+            print()

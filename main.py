@@ -53,6 +53,7 @@ def agregarPiezas():
             print("        Practica 1 IPC2: Colorealo")
             print("              Agregar Pieza")
             print("===========================================")
+            tablero.tableroOrdenada()
             print("1. Azul")
             print("2. Rojo")
             print("3. Verde")
@@ -75,7 +76,7 @@ def agregarPiezas():
                     print("===========================================")
                     print("                Tablero")
                     print("===========================================")
-                    Juego.mostrar()
+                    tablero.tableroOrdenada()
                     
                 elif color == "Rojo":
                     inicial = "R"
@@ -88,7 +89,7 @@ def agregarPiezas():
                     print("===========================================")
                     print("                Tablero")
                     print("===========================================")
-                    Juego.mostrar()
+                    tablero.tableroOrdenada()
                     
                 elif color == "Verde":
                     inicial = "V"
@@ -101,7 +102,7 @@ def agregarPiezas():
                     print("===========================================")
                     print("                Tablero")
                     print("===========================================")
-                    Juego.mostrar()
+                    tablero.tableroOrdenada()
                     
                 elif color == "Purpura":
                     inicial = "P"
@@ -114,7 +115,7 @@ def agregarPiezas():
                     print("===========================================")
                     print("                Tablero")
                     print("===========================================")
-                    Juego.mostrar()
+                    tablero.tableroOrdenada()
                     
                 elif color == "Naranja":
                     inicial = "N"
@@ -127,7 +128,7 @@ def agregarPiezas():
                     print("===========================================")
                     print("                Tablero")
                     print("===========================================")
-                    Juego.mostrar()
+                    tablero.tableroOrdenada()
                     
                 else:
                     print("La entrada no es una opcción.")
