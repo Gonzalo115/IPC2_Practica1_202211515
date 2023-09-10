@@ -53,6 +53,7 @@ def agregarPiezas():
             print("        Practica 1 IPC2: Colorealo")
             print("              Agregar Pieza")
             print("===========================================")
+            print("                Tablero")
             tablero.tableroOrdenada()
             print("1. Azul")
             print("2. Rojo")
@@ -64,76 +65,82 @@ def agregarPiezas():
             fila = int(input(f"Ingrese en que fila se desea agregar La pieza en el ranogo de [1,{filaT}]:"))
             columna = int(input(f"Ingrese en que columna se desea agregar La pieza en el rango de [1,{columnaT}]:"))
 
-            if 1 <= fila <= filaT  and 1 <= columna <= columnaT:
-                if color == "Azul":
-                    inicial = "A"
-                    nombre = "blue"
+            buscar = tablero.get_item(fila,columna)
 
-                    pieza = Pieza(fila, columna, inicial, nombre)
-                    tablero.piezas.agregar_al_final(pieza)
-
-                    print("")
-                    print("===========================================")
-                    print("                Tablero")
-                    print("===========================================")
-                    tablero.tableroOrdenada()
-                    
-                elif color == "Rojo":
-                    inicial = "R"
-                    nombre = "red"
-
-                    pieza = Pieza(fila, columna, inicial, nombre)
-                    tablero.piezas.agregar_al_final(pieza)
-
-                    print("")
-                    print("===========================================")
-                    print("                Tablero")
-                    print("===========================================")
-                    tablero.tableroOrdenada()
-                    
-                elif color == "Verde":
-                    inicial = "V"
-                    nombre = "green"
-
-                    pieza = Pieza(fila, columna, inicial, nombre)
-                    tablero.piezas.agregar_al_final(pieza)
-
-                    print("")
-                    print("===========================================")
-                    print("                Tablero")
-                    print("===========================================")
-                    tablero.tableroOrdenada()
-                    
-                elif color == "Purpura":
-                    inicial = "P"
-                    nombre = "purple"
-
-                    pieza = Pieza(fila, columna, inicial, nombre)
-                    tablero.piezas.agregar_al_final(pieza)
-
-                    print("")
-                    print("===========================================")
-                    print("                Tablero")
-                    print("===========================================")
-                    tablero.tableroOrdenada()
-                    
-                elif color == "Naranja":
-                    inicial = "N"
-                    nombre = "orange"
-
-                    pieza = Pieza(fila, columna, inicial, nombre)
-                    tablero.piezas.agregar_al_final(pieza)
-
-                    print("")
-                    print("===========================================")
-                    print("                Tablero")
-                    print("===========================================")
-                    tablero.tableroOrdenada()
-                    
-                else:
-                    print("La entrada no es una opcción.")
+            if buscar:
+                print(f"En la pocisión {fila}, {columna} ya se encuentra una Pieza")
             else:
-                print("El rango de la fila o columna no es posible")
+
+                if 1 <= fila <= filaT  and 1 <= columna <= columnaT:
+                    if color == "Azul":
+                        inicial = "A"
+                        nombre = "blue"
+
+                        pieza = Pieza(fila, columna, inicial, nombre)
+                        tablero.piezas.agregar_al_final(pieza)
+
+                        print("")
+                        print("===========================================")
+                        print("                Tablero")
+                        print("===========================================")
+                        tablero.tableroOrdenada()
+                        
+                    elif color == "Rojo":
+                        inicial = "R"
+                        nombre = "red"
+
+                        pieza = Pieza(fila, columna, inicial, nombre)
+                        tablero.piezas.agregar_al_final(pieza)
+
+                        print("")
+                        print("===========================================")
+                        print("                Tablero")
+                        print("===========================================")
+                        tablero.tableroOrdenada()
+                        
+                    elif color == "Verde":
+                        inicial = "V"
+                        nombre = "green"
+
+                        pieza = Pieza(fila, columna, inicial, nombre)
+                        tablero.piezas.agregar_al_final(pieza)
+
+                        print("")
+                        print("===========================================")
+                        print("                Tablero")
+                        print("===========================================")
+                        tablero.tableroOrdenada()
+                        
+                    elif color == "Purpura":
+                        inicial = "P"
+                        nombre = "purple"
+
+                        pieza = Pieza(fila, columna, inicial, nombre)
+                        tablero.piezas.agregar_al_final(pieza)
+
+                        print("")
+                        print("===========================================")
+                        print("                Tablero")
+                        print("===========================================")
+                        tablero.tableroOrdenada()
+                        
+                    elif color == "Naranja":
+                        inicial = "N"
+                        nombre = "orange"
+
+                        pieza = Pieza(fila, columna, inicial, nombre)
+                        tablero.piezas.agregar_al_final(pieza)
+
+                        print("")
+                        print("===========================================")
+                        print("                Tablero")
+                        print("===========================================")
+                        tablero.tableroOrdenada()
+                        
+                    else:
+                        print("La entrada no es una opcción.")
+                else:
+                    print("El rango de la fila o columna no es posible")
         elif opcion == 2:
             grafica(tablero)
             salir2 = True
