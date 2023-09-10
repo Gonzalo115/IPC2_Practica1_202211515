@@ -19,8 +19,8 @@ def pedirNumeroEntero():
 
 def tablero():
     nombreT = "Coloreado"
-    filaT = input("Ingrese el No. de Filas: ")
-    columnaT = input("Ingrese el No. de Columnas: ")
+    filaT = int(input("Ingrese el No. de Filas: "))
+    columnaT = int(input("Ingrese el No. de Columnas: "))
     tablero = Tablero(nombreT, filaT, columnaT)
     Juego.agregar_al_final(tablero)
     os.system('cls')
@@ -33,7 +33,6 @@ def agregarPiezas():
 
     filaT = int(tablero.cosultarFila())
     columnaT = int(tablero.cosultarColumna())
-
 
 
     salir2 = False
@@ -135,12 +134,26 @@ def agregarPiezas():
             else:
                 print("El rango de la fila o columna no es posible")
         elif opcion == 2:
+            grafica(tablero)
             salir2 = True
         
         else: 
             print("Error")
         input("Presione ENTER para continuar...")
         os.system('cls')
+
+
+def grafica(tablero):
+    dot_string = 'digraph G {\n'
+    dot_string += tablero.to_dot()
+    dot_string += "}\n"
+    with open("tablero.dot", "w") as archivo:
+        archivo.write(dot_string)
+    os.system("dot -Tpng tablero.dot -o tablero.png")
+    print("")
+    print("===========================================")
+    print("Se Genero La Matriz Reducida Exitosamente")
+    print("===========================================")
 
 
 
