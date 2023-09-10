@@ -68,7 +68,7 @@ def agregarPiezas():
             buscar = tablero.get_item(fila,columna)
 
             if buscar:
-                print(f"En la pocisión {fila}, {columna} ya se encuentra una Pieza")
+                print(f"En la pocisión [{fila}, {columna}] ya se encuentra una Pieza")
             else:
 
                 if 1 <= fila <= filaT  and 1 <= columna <= columnaT:
@@ -188,6 +188,7 @@ def menu():
             print("===========================================")
             print("")
             tablero()
+            Juego.inicializar()
 
         elif opcion ==2:
             os.system('cls')

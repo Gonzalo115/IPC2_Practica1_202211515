@@ -29,3 +29,11 @@ class ListaSimple:
                 return actual
             actual = actual.siguiente
         return None
+    
+    def inicializar(self):
+        if self.inicio != None:
+            actual = self.inicio
+            while actual.siguiente != None:
+                actual = actual.siguiente
+            self.inicio = None
+            actual.siguiente = None
